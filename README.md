@@ -43,3 +43,4 @@
 4. Run Node Side
 
 	node server
+	node server path localhost: 8080
