@@ -1,0 +1,53 @@
+<div class="col-md-6" style="margin: 0 auto;">
+  <div class="card card-container" style="border: none;">
+     <h1 style="margin: 20px 0; text-align: center; font-size: 36px; font-weight: 700;">Registration</h1>
+     <form *ngIf="!isSuccessful" name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate >
+        <div class="form-group">
+           <label for="FirstName">FirstName</label>
+           <input type="text" name="FirstName" [(ngModel)]="form.FirstName" #FirstName="ngModel" class="form-control" required>
+           <div class="alert" *ngIf="FirstName.errors && f.submitted" style="color: red;padding: 8px 0px;">
+               <div *ngIf="FirstName.errors.required">FirstName is required</div>
+           </div>
+           
+        </div>
+        <div class="form-group">
+            <label for="LastName">LastName</label>
+            <input type="text" name="LastName" [(ngModel)]="form.LastName" #LastName="ngModel"  required class="form-control">
+            <div class="alert" *ngIf="LastName.errors && f.submitted" style="color: red;padding: 8px 0px;">
+               <div *ngIf="LastName.errors.required">LastName is required</div>
+            </div>
+         </div>
+        <div class="form-group">
+           <label for="Email">Email</label>
+           <input type="email" name="Email" [(ngModel)]="form.Email" #Email="ngModel" Email required class="form-control">
+           <div class="alert" *ngIf="Email.errors && f.submitted" style="color: red;padding: 8px 0px;">
+           <div *ngIf="Email.errors.required">Email is required</div>
+           <!-- <div *ngIf="Email.errors.email">Provide valid Email</div> -->
+         </div>
+        </div>
+        <div class="form-group">
+           <label for="Password">Password</label>
+           <input type="Password" name="Password" [(ngModel)]="form.Password" #Password="ngModel"  required class="form-control">
+           <div class="alert" *ngIf="Password.errors && f.submitted" style="color: red;padding: 8px 0px;">
+           <div *ngIf="Password.errors.required">Password is required</div>
+         </div>
+        </div>
+        <div class="form-group">
+         <label for="password">DOB</label>
+         <input type="date" id="DOB" name="DOB" [(ngModel)]="form.DOB" #DOB="ngModel" required class="form-control">
+         <div class="alert" *ngIf="DOB.errors && f.submitted" style="color: red;padding: 8px 0px;">
+            <div *ngIf="DOB.errors.required">DOB is required</div>
+         </div>
+      </div>
+        <div class="form-group">
+          <button class="btn btn-primary btn-block">Sign Up</button>
+        </div>
+        <div class="alert"  *ngIf="f.submitted && isSignUpFailed"  style="color: grey; padding: 8px 0px;">
+          Signup failed!<br /> {{errorMessage}}
+        </div>
+     </form>
+     <div class="alert alert-success" *ngIf="isSuccessful">
+      Your registration is successful!
+    </div>
+  </div>
+</div>

@@ -1,46 +1,27 @@
-# PracticalMean
+# MEANPractical
 
-* Devloping MEAN App
-------------------------
-1. Create Angular Structure Using
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.7.
 
-	ng new <projectname>
-	
-2. Create Node/Express Structure Using
+## Development server
 
-	npm init
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-3. Install NPM Required Package
+## Code scaffolding
 
-	npm install mongoose, express, cors etc.
-	
-4. Create Component, Service, Guard Using Angular Scafolding
+Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-	ng g c comoponentname
-	ng g s servicename
-	ng g g guard
-	
-5. After Client/Server Side  Code Integration / Apply.
+## Build
 
+Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
-* Step For Run Project
-------------------------
+## Running unit tests
 
-1. clone repo from git
+Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-2.  Install dependency
-	
-	angular: cd project
-		 npm install
-	
-	node:   cd project/backend
-		npm install
+## Running end-to-end tests
 
-3. Run Angular Side
+Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 
-	ng server --port 8081
-	
-4. Run Node Side
+## Further help
 
-	node server
-	node server path localhost: 8080
+To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.

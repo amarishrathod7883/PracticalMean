@@ -1,0 +1,57 @@
+<div class="col-md-6" style="margin: 0 auto;">
+  <div class="card card-container" style="border: none;">
+     <h1 style="margin: 20px 0; text-align: center; font-size: 36px; font-weight: 700;">Add Blog</h1>
+     <form *ngIf="!isSuccessful" name="form" (ngSubmit)="f.form.valid && onCreateUpdate()" #f="ngForm" novalidate >
+        <div class="form-group">
+           <label for="Title">Title</label>
+           <input type="text" name="Title" [(ngModel)]="form.Title" #Title="ngModel" class="form-control" required>
+           <div class="alert" *ngIf="Title.errors && f.submitted" style="color: red;padding: 8px 0px;">
+               <div *ngIf="Title.errors.required">Title is required</div>
+           </div>
+           
+        </div>
+        <div class="form-group">
+            <label for="Description">Description</label>
+            <input type="text" name="Description" [(ngModel)]="form.Description" #Description="ngModel"  required class="form-control">
+            <div class="alert" *ngIf="Description.errors && f.submitted" style="color: red;padding: 8px 0px;">
+               <div *ngIf="Description.errors.required">Description is required</div>
+            </div>
+         </div>
+        <div class="form-group">
+           <label for="Status">Status</label>
+           <select name="Status" [(ngModel)]="form.Status" #Status="ngModel" Status required class="form-control">
+            <option value="">Select Status</option> 
+            <option value="publish">Publish</option>
+             <option value="unpubliish">UnPublish</option>
+           </select>
+           <div class="alert" *ngIf="Status.errors && f.submitted" style="color: red;padding: 8px 0px;">
+           <div *ngIf="Status.errors.required">Status is required</div>
+           <!-- <div *ngIf="Status.errors.email">Provide valid Status</div> -->
+         </div>
+        </div>
+        <div class="form-group">
+           <label for="Author">Author</label>
+           <input type="text" name="Author" [(ngModel)]="form.Author" #Author="ngModel"  required class="form-control">
+           <div class="alert" *ngIf="Author.errors && f.submitted" style="color: red;padding: 8px 0px;">
+           <div *ngIf="Author.errors.required">Author is required</div>
+         </div>
+        </div>
+        <div class="form-group">
+         <label for="password">ModifyDate</label>
+         <input type="date" id="ModifyDate" name="ModifyDate" [(ngModel)]="form.ModifyDate" #ModifyDate="ngModel" required class="form-control">
+         <div class="alert" *ngIf="ModifyDate.errors && f.submitted" style="color: red;padding: 8px 0px;">
+            <div *ngIf="ModifyDate.errors.required">ModifyDate is required</div>
+         </div>
+      </div>
+        <div class="form-group">
+          <button class="btn btn-primary btn-block">Submit</button>
+        </div>
+        <div class="alert"  *ngIf="f.submitted && isSignUpFailed"  style="color: grey; padding: 8px 0px;">
+          Signup failed!<br /> {{errorMessage}}
+        </div>
+     </form>
+     <div class="alert alert-success" *ngIf="isSuccessful">
+      Your registration is successful!
+    </div>
+  </div>
+</div>
